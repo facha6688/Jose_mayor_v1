@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>El servidor de JOSE MAYOR</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: black url('https://raw.githubusercontent.com/facha6688/Jose_foto_anime/d2b1f950c278ef6c3df23e2544ba0462d1a9c906/SdD0RRxd.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .pantalla {
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 60px 30px;
+      overflow-y: auto;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 310px;
+      height: 310px;
+      border-radius: 50%;
+      border: 6px solid white;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 6em;
+      margin: 20px 0 0 0;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    h2 {
+      font-size: 4em;
+      color: #ff99ff;
+      margin-bottom: 40px;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 15px #fff, 0 0 25px #f0f, 0 0 35px #f0f;
+      }
+      to {
+        text-shadow: 0 0 25px #fff, 0 0 35px #ff0, 0 0 50px #ff0;
+      }
+    }
+
+    .button {
+      margin: 25px;
+      padding: 30px 70px;
+      background: #ff0080;
+      color: white;
+      text-decoration: none;
+      border-radius: 15px;
+      font-weight: bold;
+      font-size: 3em;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #ff66a3;
+    }
+
+    .descripcion {
+      margin-top: 60px;
+      font-size: 2.8em;
+      white-space: pre-line;
+      color: #ddd;
+      text-align: left;
+      width: 90%;
+      max-width: 1600px;
+      line-height: 2.3;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: rgba(0,0,0,0.5);
+      padding: 40px;
+      border-radius: 15px;
+      border: 2px solid #ff66a3;
+    }
+
+    .bienvenida {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    .bienvenida h1 {
+      font-size: 4.5em;
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 4em; }
+      h2 { font-size: 3em; }
+      .descripcion {
+        font-size: 2.1em;
+        padding: 25px;
+        width: 95%;
+        max-width: none;
+      }
+      .button {
+        font-size: 2.2em;
+        padding: 20px 50px;
+      }
+      .avatar {
+        width: 240px;
+        height: 240px;
+      }
+      .bienvenida h1 {
+        font-size: 3em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bienvenida" id="bienvenida">
+    <h1>Bienvenido</h1>
+    <button class="button" onclick="entrar()">Entrar</button>
+  </div>
+
+  <div class="pantalla" id="pantalla" style="display: none;">
+    <img class="avatar" src="https://raw.githubusercontent.com/facha6688/Jose_avatar_/refs/heads/main/iphone_wallpaper_itachi_and_sasuke_by_heart_of_uchiha_dezs0z3-pre_edit_833332891087419.png" />
+    <h1>El servidor de</h1>
+    <h1>JOSE MAYOR</h1>
+    <h2>ANIME Y CHARLAS</h2>
+    <a class="button" href="https://discord.gg/PwVS9J4fRp" target="_blank">Entrar al Discord</a>
+
+    <div class="descripcion">
+Ven y únete a esta comunidad activa y amigable...
+-# _ _   ¡Aquí podrás disfrutar de anime, juegos y buena onda!
+_ _ ✨ 𓂃 TU SERVER ! ＞ᴗ＜_ _
+ANIME  SOCIAL  JUEGOS  MÚSICA
+_ _ ───﹕♡﹕── ﹕♡﹕──﹕♡﹕───
+> _ _ 🫧﹒Servidor activo con gente súper sociable.
+_ _﹒﹒♡⁠﹒Canales de entretenimiento y música para todos.
+_ _ 🎶﹒Canal dedicado a Nekotika y alertas de episodios nuevos.
+_ _﹒﹒♡⁠﹒Chat general para charlar y compartir.
+_ _ 🛠️﹒Administradores siempre activos para ayudarte.
+_ _
+_ _ •••         •••         •••
+_ _
+_ _ 🎉﹒Próximamente más mejoras y eventos especiales.
+_ _﹒﹒♡⁠﹒¡Entre más seamos, mejor la diversión!
+    </div>
+  </div>
+
+  <audio id="musica" src="https://raw.githubusercontent.com/facha6688/Jose_musica/main/Black%20Catcher%20-%20%E3%83%93%E3%83%83%E3%82%B1%E3%83%96%E3%83%A9%E3%83%B3%E3%82%AB.mp3"></audio>
+
+  <script>
+    function entrar() {
+      document.getElementById('bienvenida').style.display = 'none';
+      document.getElementById('pantalla').style.display = 'flex';
+      document.getElementById('musica').play();
+    }
+  </script>
+
+</body>
+</html>
